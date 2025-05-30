@@ -6,6 +6,14 @@ import CadastroServico from "../negocio/cadastroServico";
 import ConsumoCliente from "../negocio/consumoCliente";
 import ListagemClientes from "../negocio/listagemClientes";
 import ListagensEspeciais from "../negocio/listagensEspeciais";
+import AtualizarCliente from "../negocio/atualizarCliente";
+import ExcluirCliente from "../negocio/excluirCliente";
+import AtualizarProduto from "../negocio/atualizarProduto";
+import ExcluirProduto from "../negocio/excluirProduto";
+import AtualizarServico from "../negocio/atualizarServico";
+import ExcluirServico from "../negocio/excluirServico";
+import MockDados from "../negocio/mockDados";
+
 
 console.log(`Bem-vindo ao cadastro de clientes do Grupo World Beauty`)
 let empresa = new Empresa()
@@ -19,6 +27,13 @@ while (execucao) {
     console.log(`4 - Cadastrar serviço`);
     console.log(`5 - Registrar consumo de produto/serviço`);
     console.log(`6 - Listagens especiais`);
+    console.log("7 - Atualizar cliente");
+    console.log("8 - Excluir cliente");
+    console.log("9 - Atualizar produto");
+    console.log("10 - Excluir produto");
+    console.log("11 - Atualizar serviço");
+    console.log("12 - Excluir serviço");
+    console.log("13 - Gerar dados de teste (mock)");
     console.log(`0 - Sair`);
 
     let entrada = new Entrada()
@@ -48,6 +63,27 @@ while (execucao) {
             listagens.maisConsumidosPorGenero();
             listagens.top10MenosConsumidores();
             listagens.top5ValorConsumido();
+            break;
+        case 7:
+            new AtualizarCliente(empresa.getClientes).atualizar();
+            break;
+        case 8:
+            new ExcluirCliente(empresa.getClientes).excluir();
+            break;
+        case 9:
+            new AtualizarProduto(empresa.getProdutos).atualizar();
+            break;
+        case 10:
+            new ExcluirProduto(empresa.getProdutos).excluir();
+            break;
+        case 11:
+            new AtualizarServico(empresa.getServicos).atualizar();
+            break;
+        case 12:
+            new ExcluirServico(empresa.getServicos).excluir();
+            break;
+        case 13:
+            new MockDados(empresa).gerar();
             break;
         case 0:
             execucao = false
