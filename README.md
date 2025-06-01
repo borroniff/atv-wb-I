@@ -40,6 +40,7 @@ Este é um sistema **CLI (Command Line Interface)** desenvolvido como parte da A
 
    ```bash
    npm install
+   npm install typescript
    ```
 
 4. **Compile o projeto TypeScript:**
@@ -51,7 +52,7 @@ Este é um sistema **CLI (Command Line Interface)** desenvolvido como parte da A
 5. **Execute o sistema:**
 
    ```bash
-   node dist/app/main.js
+   node out/app/main.js
    ```
 
 ---
